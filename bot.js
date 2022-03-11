@@ -29,7 +29,7 @@ bot.onText(/\/to (.+)/, (msg, match) => {
   const count = words[1]
   const chatId = msg.chat.id;
   const res = convertTo(currency, count)
-  bot.sendMessage(chatId, res + signs[currency]);
+  bot.sendMessage(chatId, res + (signs[currency] || currency));
 });
 
 bot.onText(/\/from (.+)/, (msg, match) => {
